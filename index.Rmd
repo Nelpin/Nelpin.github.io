@@ -1,5 +1,24 @@
 ---
-title: "My Website"
+title: "Inicio"
+runtime: shiny
+output: html_document
 ---
 
-Hello, Website!
+```{r setup, include=FALSE}
+library("shiny")
+library("flexdashboard")
+```
+```{r}
+library("ggplot2")
+```
+
+Selections {.sidebar}
+===============================
+
+Select the movie genre to display
+
+```{r}
+## The shiny part
+selectInput("movie_type", label = "Movie genre", 
+            c("Romance", "Action", "Animation"))
+```
